@@ -118,6 +118,9 @@ def convert(request: Request) -> ConvertFunc:
 
     return convert_func
 
+@app.get("/")
+def home():
+    return "Server is running."
 
 @app.post("/parse/url", response_model=ParseResponse)
 def parse_document_url(
